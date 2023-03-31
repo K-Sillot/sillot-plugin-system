@@ -2,7 +2,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import eslintPlugin from 'vite-plugin-eslint';
 import { replaceCodePlugin } from 'vite-plugin-replace';
 import packageJson from './package.json';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
@@ -10,9 +9,6 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 export default defineConfig({
     plugins: [
         svelte(),
-        eslintPlugin({
-            include: ['src/**/*.ts', 'src/**/*.svelte', 'src/*.ts', 'src/*.svelte'],
-        }),
         replaceCodePlugin({
             replacements: [
                 {
@@ -57,6 +53,7 @@ export default defineConfig({
             },
             output: {
                 name: 'main',
+                dir: 'out'
             },
         },
         //构建后是否生成 source map 文件
