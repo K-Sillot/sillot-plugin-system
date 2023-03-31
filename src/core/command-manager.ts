@@ -1,6 +1,7 @@
 import { TYPES } from '@/config';
 import { Command, ICommandManager } from '@/types';
-import { Error, log, Warning } from '@/util';
+// rome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
+import  { Error, log, Warning } from '@/util';
 import { inject, injectable } from 'inversify';
 import { Shortcut } from './shortcut';
 

@@ -58,7 +58,8 @@ export async function isExists(p: string) {
 export class Info {
     constructor(private message: string) {}
 }
-export class Error {
+// rome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
+export  class Error {
     constructor(private message: string) {}
 }
 export class Warning {

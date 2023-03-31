@@ -35,7 +35,7 @@ class TestPlugin extends Plugin {
 
     onunload() {
         console.log('TestRemotePluginUnload');
-        this.el && this.el.remove();
+        this.el?.remove();
     }
 }
 
