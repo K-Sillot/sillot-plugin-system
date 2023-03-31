@@ -27,14 +27,14 @@ export class Store {
         for (const plugin of this.plugins) {
             const p: StorePluginStatus = { ...plugin, isExist: false, needUpgrade: false };
             const oldPlugin = plugins.find((p) => p.key === plugin.key);
-            if (oldPlugin) {
-                p.isExist = true;
-                const pV = new SemVer(p.version);
-                const oldPluginV = new SemVer(oldPlugin.version);
-                if (pV.compare(oldPluginV) === 1) {
-                    p.needUpgrade = true;
-                }
-            }
+            // if (oldPlugin) {
+            //     p.isExist = true;
+            //     const pV = new SemVer(p.version);
+            //     const oldPluginV = new SemVer(oldPlugin.version);
+            //     if (pV.compare(oldPluginV) === 1) {
+            //         p.needUpgrade = true;
+            //     }
+            // }
             storePlugins.push(p);
         }
         this.pluginStatus = storePlugins;

@@ -16,14 +16,15 @@ export class FileClient {
     };
 
     private constructor() {
-        const v = this.getVersion();
-        if (semver.compare(v, '2.8.1') < 0) {
-            // old version, electron api support
-            this.fileApi = this.electronApi;
-        } else {
-            // new api, file api support
-            this.fileApi = this.serverApi;
-        }
+        this.fileApi = this.serverApi;
+        // const v = this.getVersion();
+        // if (semver.compare(v, '2.8.1') < 0) {
+        //     // old version, electron api support
+        //     this.fileApi = this.electronApi;
+        // } else {
+        //     // new api, file api support
+        //     this.fileApi = this.serverApi;
+        // }
     }
 
     static getInstanceApi() {
